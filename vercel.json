@@ -4,10 +4,6 @@
     {
       "src": "textbook/package.json",
       "use": "@vercel/docusaurus"
-    },
-    {
-      "src": "api/index.py",
-      "use": "@vercel/python"
     }
   ]
 }
