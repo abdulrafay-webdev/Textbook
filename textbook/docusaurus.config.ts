@@ -125,7 +125,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Your Name/Organization. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics, by Abdul Rafay. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

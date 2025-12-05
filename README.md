@@ -2,10 +2,14 @@
 
 This repository contains an AI-native technical textbook for "Physical AI & Humanoid Robotics," built using Docusaurus. It also includes a Retrieval-Augmented Generation (RAG) chatbot capable of answering questions based on the book's content.
 
+## Author
+
+This project and book are created by **Abdul Rafay**.
+
 ## Project Structure
 
 -   `textbook/`: The Docusaurus project for the textbook.
--   `backend/`: A FastAPI application for the RAG chatbot's backend.
+-   `api/`: A FastAPI application for the RAG chatbot's backend (Vercel Serverless Function).
 
 ## Getting Started
 
@@ -42,13 +46,9 @@ This will open the textbook in your browser at `http://localhost:3000`.
 
 ### 3. Set up the FastAPI Backend (RAG Chatbot)
 
-Open a new terminal and navigate to the `backend` directory.
+Open a new terminal at the root of the project.
 
-```bash
-cd backend
-```
-
-Create a Python virtual environment and install dependencies:
+Create a Python virtual environment and install dependencies from the root `requirements.txt`:
 
 ```bash
 python -m venv venv
@@ -57,13 +57,16 @@ python -m venv venv
 pip install -r requirements.txt
 ```
 
-Run the FastAPI application:
+To run the FastAPI backend locally, you can use the Vercel CLI:
 
 ```bash
-uvicorn app.main:app --reload
+# Install vercel cli if you haven't already
+npm install -g vercel
+# Run the development server
+vercel dev
 ```
 
-The FastAPI application will be available at `http://localhost:8000`.
+The Vercel development server will run both your Docusaurus app and the Python API. The textbook will be available at `http://localhost:3000` and the API at `http://localhost:3000/api/chat`.
 
 ## Deployment to Vercel
 
@@ -76,13 +79,9 @@ This project is configured for easy deployment to Vercel.
     *   From your Vercel dashboard, click on "Add New..." -> "Project".
     *   Under "Import Git Repository," select your `Textbook` repository from GitHub.
 
-3.  **Configure the Project:**
-    *   Vercel will automatically detect that you are deploying a Docusaurus project.
-    *   The "Framework Preset" should be set to "Docusaurus".
-    *   The "Root Directory" should be set to `textbook`.
+3.  **Configure and Deploy:**
+    *   Vercel should automatically detect the monorepo setup from the `vercel.json` file.
+    *   You should not need to change any settings.
     *   Click "Deploy".
 
-4.  **Backend Deployment (Optional):**
-    *   The FastAPI backend is not automatically deployed with the Docusaurus frontend. To deploy the backend, you would need to set up a separate Vercel project pointing to the `backend` directory, or use another hosting service.
-
-Vercel will build and deploy your Docusaurus site, and provide you with a live URL.
+Vercel will build and deploy both your Docusaurus site and the Python API, and provide you with a live URL.

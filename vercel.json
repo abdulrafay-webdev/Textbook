@@ -4,12 +4,10 @@
     {
       "src": "textbook/package.json",
       "use": "@vercel/docusaurus"
-    }
-  ],
-  "rewrites": [
+    },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "api/index.py",
+      "use": "@vercel/python"
     }
   ]
 }
