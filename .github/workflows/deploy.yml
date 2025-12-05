@@ -1,0 +1,33 @@
+name: Deploy Docusaurus GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Set a branch to deploy from
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./textbook
+      - name: Build Docusaurus website
+        run: npm run build
+        working-directory: ./textbook
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./textbook/build
+          # The branch the website is deployed to.
+          # For users of this template, it will be the `gh-pages` branch.
+          publish_branch: gh-pages
