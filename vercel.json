@@ -1,9 +1,0 @@
-{
-  "version": 2,
-  "builds": [
-    {
-      "src": "textbook/package.json",
-      "use": "@vercel/docusaurus"
-    }
-  ]
-}
