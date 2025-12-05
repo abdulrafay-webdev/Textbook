@@ -20,7 +20,7 @@ const Chatbot = () => {
         setIsLoading(true);
 
         try {
-            const response = await fetch('/api/chat', {
+            const response = await fetch('https://your-render-backend-url.onrender.com/chat', { // TODO: Replace with your actual Render backend URL
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
