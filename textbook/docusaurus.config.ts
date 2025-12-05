@@ -15,15 +15,14 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://abdulrafay-webdev.github.io',
+  url: 'https://textbook.vercel.app', // Your Vercel URL
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/Textbook/',
+  // For Vercel deployment, it is often just '/'.
+  baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'abdulrafay-webdev', // Usually your GitHub org/user name.
-  projectName: 'Textbook', // Usually your repo name.
+  // We are deploying to Vercel, so we don't need these.
+  // organizationName: 'abdulrafay-webdev', // Usually your GitHub org/user name.
+  // projectName: 'Textbook', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
